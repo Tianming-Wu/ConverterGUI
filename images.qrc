@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>res/qtlogo_black.png</file>
+        <file>res/qtlogo_black_transparent.png</file>
+        <file>res/down-arrow-simple.png</file>
+        <file>res/clear-button.png</file>
+    </qresource>
+</RCC>

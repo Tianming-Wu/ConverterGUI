@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Converter</class>
+ <widget class="QMainWindow" name="Converter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>731</width>
+    <height>471</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Converter</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="MainWidget" native="true">
+      <property name="styleSheet">
+       <string notr="true">#MainWidget {
+	background-color: rgba(255, 255, 255, 120);
+	border-radius: 7px;
+}
+
+#titleWidget {
+	background-color: rgba(230, 230, 230, 120);
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+QPushButton {
+	background-color: rgba(240, 240, 240, 240);
+	border-radius: 3px;
+	border: 1px solid black;
+    border-style: outset;
+	border-color: rgba(15, 15, 15, 120);
+}
+
+QPushButton::hover {
+	border: 1px solid rgba(69, 137, 255, 240);
+}
+
+QComboBox {
+	background-color: rgba(240, 240, 240, 240);
+	border-radius: 3px;
+	border: 1px solid black;
+    border-style: outset;
+	border-color: rgba(15, 15, 15, 120);
+}
+
+QComboBox:hover{
+	border: 1px solid rgba(69, 137, 255, 240);
+}
+
+QComboBox QAbstractItemView {
+	outline: 0px solid gray;
+	border: 1px solid lightgray;
+	background-color: white;
+	selection-background-color: rgba(238, 238, 238, 200);
+}
+
+QComboBox QAbstractItemView::item {
+	height: 22px; /* 项的高度（需设置pComboBox-&gt;setView(new QListView()); */
+}
+
+QComboBox QAbstractItemView::item:hover {
+	background-color: rgba(238, 238, 238, 200);
+}
+
+QComboBox QAbstractItemView::item:selected {
+	/* background-color: rgba(238, 238, 238, 200);*/
+	background-color: rgba(69, 137, 255, 240);
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 15px;
+	border-left-width: 0px;
+	border-left-color: darkgray;
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+	width: 15px;
+	background: transparent;
+	padding: 0px 0px 0px 0px;
+	image: url(:/img/res/down-arrow-simple.png);
+}
+
+QComboBox::down-arrow:on {
+	image: url(:/img/res/down-arrow-simple.png);
+}
+
+QGroupBox {
+	border-radius: 3px;
+	border-width: 1px;
+    border-style:outset;
+	border-color: rgba(15, 15, 15, 120);
+}
+
+QGroupBox:title {
+    subcontrol-origin: margin;
+    left: 3px;
+	top: 3px;
+}
+
+QLineEdit {
+	background-color: rgba(250, 250, 250, 240);
+	border-radius: 3px;
+	border: 1px solid black;
+    border-style: outset;
+	border-color: rgba(15, 15, 15, 120);
+}
+
+QLineEdit::hover {
+	border: 1px solid rgba(69, 137, 255, 240);
+}
+
+QProgressBar{
+	background-color: rgba(240, 240, 240, 150);
+	border-radius: 3px;
+	border: 1px solid gray;
+    border-style: outset;
+}
+
+QProgressBar:chunk{
+	border-radius: 3px;
+	background-color: rgba(150, 150, 150, 150);
+}</string>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>711</width>
+         <height>66</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_InputFile">
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>输入文件</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="leInputFile">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="dragEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBrowse_InputFile">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>从文件浏览输入文件</string>
+            </property>
+            <property name="text">
+             <string notr="true">...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_OutputFile">
+            <property name="minimumSize">
+             <size>
+              <width>53</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>输出文件</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="leOutputFile">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBrowse_OutputFile">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>从文件浏览输出文件</string>
+            </property>
+            <property name="text">
+             <string notr="true">...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="gbQuickSettings">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>531</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>快速设置</string>
+       </property>
+       <widget class="QCheckBox" name="cbAutoGenOutputFilename">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>更改输入文件时，自动更改输出文件名</string>
+        </property>
+        <property name="text">
+         <string>自动生成输出文件名</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="cbOutputToOriginalFolder">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>直接输出到源文件目录</string>
+        </property>
+        <property name="text">
+         <string>输出到源文件目录</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_OutputFormat">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>20</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>输出格式</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cboxOutputFormat">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>40</y>
+          <width>131</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>指定输出的文件格式</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>mp4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>avi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mpg</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QCheckBox" name="cbAutoGenOutputFolder">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>181</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>输出目录不存在时，自动创建该目录</string>
+        </property>
+        <property name="text">
+         <string>自动生成输出目录</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="tristate">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>440</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>决定当任务进行时，是否将程序隐藏到托盘栏</string>
+       </property>
+       <property name="text">
+        <string>自动隐藏到托盘栏</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnGenerate">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>120</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>按照配置生成可用的命令行指令</string>
+       </property>
+       <property name="text">
+        <string>生成指令</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnExecute">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>160</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>生成并执行指令</string>
+       </property>
+       <property name="text">
+        <string>执行</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="titleWidget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>731</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_WindowTitle">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>2</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="text">
+         <string>Converter GUI</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="wndCloseButton">
+        <property name="geometry">
+         <rect>
+          <x>711</x>
+          <y>2</y>
+          <width>18</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#wndCloseButton {
+	background-color: transparent;
+	border-radius: 7px;
+	border: 0px;
+}
+
+#wndCloseButton::hover {
+	background-color: rgba(255, 24, 24, 120);
+}</string>
+        </property>
+        <property name="text">
+         <string notr="true">×</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QProgressBar" name="pgBarProgress">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>410</y>
+         <width>711</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>显示任务的进度</string>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textVisible">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="format">
+        <string>%p%</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
